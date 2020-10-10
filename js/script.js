@@ -7,8 +7,7 @@ let currentRoundNumber = 1;
 const targetNumber = document.querySelector("#target-number");
 const humanGuess = document.querySelector("#human-guess");
 const computerGuess = document.querySelector("#target-number");
-const humanPoint = document.querySelector("#human-score");
-const computerPoint = document.querySelector("#computer-score");
+
 // const humanGuess = document.querySelector("#human-guess");
 
 const guessBtn = document.querySelector("#guess");
@@ -20,10 +19,6 @@ function advanceRound() {
 function generateTarget() {
   return (Math.floor(Math.random() * 10))
 }
-
-// Event Handlers
-// guessBtn.addEventListener("click", makeGuess);
-// nextRoundBtn.addEventListener("click", advanceRound);
 
 function makeGuess() {
   if (humanGuess.value > 9) {
@@ -51,10 +46,10 @@ function compareGuesses(human, computer, guess) {
 
 function updateScore(winner) {
   if (winner == true) {
-    humanPoint.innerHTML = humanScore++
+    humanScore++
     winner = "Human"
   } else {
-    computerPoint.innerHTML = computerScore++;
+    computerScore++;
     winner = "Computer"
   }
 }
